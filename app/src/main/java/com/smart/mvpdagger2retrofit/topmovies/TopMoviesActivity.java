@@ -27,4 +27,10 @@ public class TopMoviesActivity extends BaseActivity implements TopMoviesActivity
     public void showSnackbar(String s) {
 
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        presenter.rxUnsubscribe();
+    }
 }
